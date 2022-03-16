@@ -1,0 +1,32 @@
+<html>
+<body>
+<input id="dS"></input><button id="bS">Search</button>
+<section id="iframe"></section>
+<style>
+#iframe ,iframe {
+width:100%;
+height:100vh;
+/*margin:-100vh;
+position:absolute;
+*/
+background:red;
+}
+</style>
+<script>
+function s() {
+let dSv = document.getElementById("dS").value;
+const para = document.createElement("iframe");
+para.src = "https://who.is/whois/" + dSv;
+document.getElementById("iframe").appendChild(para);
+setTimeout(myGreeting, 5000);
+function myGreeting() {
+let rD = document.querySelector("center");
+let rD2 = rD.children[0];
+let rD3 = rD2.textContent;
+console.log(rD3);
+};
+};
+document.getElementById("bS").addEventListener("click", s);
+</script>
+</body>
+</html>
